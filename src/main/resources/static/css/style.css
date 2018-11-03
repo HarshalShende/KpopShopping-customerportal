@@ -3,10 +3,26 @@ body {
 	padding-bottom: 20px;
 }
 
+hr {
+	border: none;
+	height: 1px;
+	color: #333;
+	background-color: #333;
+}
+
 .navbar {
 	margin-bottom: 20px;
 }
 
+
+.container{
+	width: 90%;
+}
+
 .box{
 	border: 2px solid red;
+}
+
+.logo{
+	padding-top: 100px;
 }
