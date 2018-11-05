@@ -11,6 +11,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.bookstore.service.impl.UserSecurityService;
+import com.bookstore.utility.SecurityUtility;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
@@ -22,11 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserSecurityService userSecurityService;
 	
 	private BCryptPasswordEncoder passwordEncoder() {
-		return SecurityUtility.passwordEncoder();	 
+		return SecurityUtility.passwordEncoder();
 	}
 	
 	private static final String[] PUBLIC_MATCHERS = {
-			"/CSS/**",
+			"/css/**",
 			"/js/**",
 			"/image/**",
 			"/",
@@ -37,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests().
-	/*		antMatchers("/**")*/
+		/*	antMatchers("/**").*/
 			antMatchers(PUBLIC_MATCHERS).
 			permitAll().anyRequest().authenticated();
 		
@@ -56,4 +59,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
 	}
+	
 }

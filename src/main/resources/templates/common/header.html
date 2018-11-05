@@ -25,7 +25,7 @@
 		<nav class="navbar navbar-default navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Kpop Global</a>
+					<a class="navbar-brand" th:href="@{/}">Kpop Global</a>
 				</div>
 				<div id="navbar">
 					<ul class="nav navbar-nav navbar-left">
@@ -47,7 +47,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">SHOPPING CART </a></li>
-						<li><a href="#">MY ACCOUNT </a></li>
+						<li><a th:href="@{/login}">MY ACCOUNT </a></li>
 						<li><a href="#">LOG OUT</a></li>
 					</ul>
 				</div>
