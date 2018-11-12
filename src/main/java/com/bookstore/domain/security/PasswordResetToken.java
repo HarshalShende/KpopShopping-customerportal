@@ -15,8 +15,9 @@ import com.bookstore.domain.User;
 
 @Entity
 public class PasswordResetToken {
+// id, token, user, expiryDate
 
-	private static final int EXPIRATION = 60*24;
+	private static final int EXPIRATION = 60*24; //set expiry time to one day 
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
