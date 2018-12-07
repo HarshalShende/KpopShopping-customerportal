@@ -49,7 +49,7 @@
 						<li><a href="#">SHOPPING CART </a></li>
 						<li><a sec:authorize="isAnonymous()" th:href="@{/login}">MY ACCOUNT </a></li>
 						<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY ACCOUNT </a></li>
-						<li><a sec:authorize="isAuthenticated()" href="@{/logout}">LOG OUT</a></li>
+						<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOG OUT</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->

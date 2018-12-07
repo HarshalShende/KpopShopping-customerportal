@@ -30,7 +30,6 @@ import com.bookstore.service.impl.UserSecurityService;
 import com.bookstore.utility.MailConstructor;
 import com.bookstore.utility.SecurityUtility;
 
-
 @Controller
 public class HomeController {
 	
@@ -39,37 +38,69 @@ public class HomeController {
 	
 	@Autowired
 	private MailConstructor mailConstructor;
-	
+
 	@Autowired
 	private UserService userService;
 	
 	@Autowired
 	private UserSecurityService userSecurityService;
-	
-	
+
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
-	
+
 	@RequestMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("classActiveLogin", true);
 		return "myAccount";
 	}
-	
+
 	@RequestMapping("/forgetPassword")
 	public String forgetPassword(
-			Model model) {
-		
+			HttpServletRequest request,
+			@ModelAttribute("email") String email,
+			Model model
+			) {
+
 		model.addAttribute("classActiveForgetPassword", true);
+		
+		User user = userService.findByEmail(email);
+		
+		if (user == null) {
+			model.addAttribute("emailNotExist", true);
+			return "myAccount";
+		}
+		
+		String password = SecurityUtility.randomPassword();
+		
+		String encryptedPassword = SecurityUtility.passwordEncoder().encode(password);
+		user.setPassword(encryptedPassword);
+		
+		userService.save(user);
+		
+		String token = UUID.randomUUID().toString();
+		userService.createPasswordResetTokenForUser(user, token);
+		
+		String appUrl = "http://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath();
+		
+		SimpleMailMessage newEmail = mailConstructor.constructResetTokenEmail(appUrl, request.getLocale(), token, user, password);
+		
+		mailSender.send(newEmail);
+		
+		model.addAttribute("forgetPasswordEmailSent", "true");
+		
+		
 		return "myAccount";
 	}
 	
-	@RequestMapping(value="/newUser", method=RequestMethod.POST)
-	public String newUserPost(HttpServletRequest request, 
+	@RequestMapping(value="/newUser", method = RequestMethod.POST)
+	public String newUserPost(
+			HttpServletRequest request,
 			@ModelAttribute("email") String userEmail,
-			@ModelAttribute("username") String username, Model model) throws Exception{
+			@ModelAttribute("username") String username,
+			Model model
+			) throws Exception{
 		model.addAttribute("classActiveNewAccount", true);
 		model.addAttribute("email", userEmail);
 		model.addAttribute("username", username);
@@ -81,7 +112,7 @@ public class HomeController {
 		}
 		
 		if (userService.findByEmail(userEmail) != null) {
-			model.addAttribute("email", true);
+			model.addAttribute("emailExists", true);
 			
 			return "myAccount";
 		}
@@ -111,38 +142,34 @@ public class HomeController {
 		
 		mailSender.send(email);
 		
-		model.addAttribute("emailSent", true);
+		model.addAttribute("emailSent", "true");
 		
 		return "myAccount";
-		
-		
 	}
 	
+
 	@RequestMapping("/newUser")
-	public String newUser(
-			Locale locale,
-			@RequestParam("token") String token,
-			Model model) {
+	public String newUser(Locale locale, @RequestParam("token") String token, Model model) {
 		PasswordResetToken passToken = userService.getPasswordResetToken(token);
-		
+
 		if (passToken == null) {
 			String message = "Invalid Token.";
 			model.addAttribute("message", message);
 			return "redirect:/badRequest";
 		}
-		
+
 		User user = passToken.getUser();
 		String username = user.getUsername();
-		
-		//set current login session for the above user
+
 		UserDetails userDetails = userSecurityService.loadUserByUsername(username);
-		
-		Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), 
+
+		Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(),
 				userDetails.getAuthorities());
 		
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		
+		model.addAttribute("user", user);
+
 		model.addAttribute("classActiveEdit", true);
 		return "myProfile";
 	}
