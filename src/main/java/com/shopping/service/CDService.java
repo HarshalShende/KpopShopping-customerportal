@@ -1,8 +1,8 @@
-package com.bookstore.service;
+package com.shopping.service;
 
 import java.util.List;
 
-import com.bookstore.domain.CD;
+import com.shopping.domain.CD;
 
 public interface CDService {
 	List<CD> findAll();

@@ -1,4 +1,4 @@
-package com.bookstore.service.impl;
+package com.shopping.service.impl;
 
 import java.util.Set;
 
@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bookstore.domain.User;
-import com.bookstore.domain.security.PasswordResetToken;
-import com.bookstore.domain.security.UserRole;
-import com.bookstore.repository.PasswordResetTokenRepository;
-import com.bookstore.repository.RoleRepository;
-import com.bookstore.repository.UserRepository;
-import com.bookstore.service.UserService;
+import com.shopping.domain.User;
+import com.shopping.domain.security.PasswordResetToken;
+import com.shopping.domain.security.UserRole;
+import com.shopping.repository.PasswordResetTokenRepository;
+import com.shopping.repository.RoleRepository;
+import com.shopping.repository.UserRepository;
+import com.shopping.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

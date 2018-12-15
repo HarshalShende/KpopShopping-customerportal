@@ -1,4 +1,4 @@
-package com.bookstore.repository;
+package com.shopping.repository;
 
 import java.util.Date;
 import java.util.stream.Stream;
@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import com.bookstore.domain.User;
-import com.bookstore.domain.security.PasswordResetToken;
+import com.shopping.domain.User;
+import com.shopping.domain.security.PasswordResetToken;
 
 public interface PasswordResetTokenRepository extends JpaRepository<PasswordResetToken, Long>{
 	

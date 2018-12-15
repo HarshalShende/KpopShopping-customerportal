@@ -1,4 +1,4 @@
-package com.bookstore.controller;
+package com.shopping.controller;
 
 import java.security.Principal;
 import java.util.Arrays;
@@ -25,16 +25,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.bookstore.domain.CD;
-import com.bookstore.domain.User;
-import com.bookstore.domain.security.PasswordResetToken;
-import com.bookstore.domain.security.Role;
-import com.bookstore.domain.security.UserRole;
-import com.bookstore.service.CDService;
-import com.bookstore.service.UserService;
-import com.bookstore.service.impl.UserSecurityService;
-import com.bookstore.utility.MailConstructor;
-import com.bookstore.utility.SecurityUtility;
+import com.shopping.domain.CD;
+import com.shopping.domain.User;
+import com.shopping.domain.security.PasswordResetToken;
+import com.shopping.domain.security.Role;
+import com.shopping.domain.security.UserRole;
+import com.shopping.service.CDService;
+import com.shopping.service.UserService;
+import com.shopping.service.impl.UserSecurityService;
+import com.shopping.utility.MailConstructor;
+import com.shopping.utility.SecurityUtility;
 
 
 

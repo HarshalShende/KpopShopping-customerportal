@@ -1,4 +1,4 @@
-package com.bookstore;
+package com.shopping;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,20 +8,20 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.bookstore.domain.User;
-import com.bookstore.domain.security.Role;
-import com.bookstore.domain.security.UserRole;
-import com.bookstore.service.UserService;
-import com.bookstore.utility.SecurityUtility;
+import com.shopping.domain.User;
+import com.shopping.domain.security.Role;
+import com.shopping.domain.security.UserRole;
+import com.shopping.service.UserService;
+import com.shopping.utility.SecurityUtility;
 
 @SpringBootApplication
-public class BookstoreApplication implements CommandLineRunner{
+public class ShoppingApplication implements CommandLineRunner{
 
 	@Autowired
 	private UserService userService;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(BookstoreApplication.class, args);
+		SpringApplication.run(ShoppingApplication.class, args);
 	}
 	
 	@Override

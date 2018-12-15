@@ -1,4 +1,4 @@
-package com.bookstore.service.impl;
+package com.shopping.service.impl;
 
 
 
@@ -7,10 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bookstore.domain.CD;
+import com.shopping.domain.CD;
 
-import com.bookstore.repository.CDRepository;
-import com.bookstore.service.CDService;
+import com.shopping.repository.CDRepository;
+import com.shopping.service.CDService;
 
 
 @Service

@@ -1,4 +1,4 @@
-package com.bookstore.utility;
+package com.shopping.utility;
 
 import java.util.Locale;
 
@@ -7,7 +7,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Component;
 
-import com.bookstore.domain.User;
+import com.shopping.domain.User;
 
 @Component
 public class MailConstructor {
