@@ -6,4 +6,6 @@ import com.bookstore.domain.CD;
 
 public interface CDService {
 	List<CD> findAll();
+	
+	CD findOne(Long id);
 }

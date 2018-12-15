@@ -23,4 +23,7 @@ public class CDServiceImp implements CDService{
 		return (List<CD>)cdRepository.findAll();
 	}
 
+	public CD findOne(Long id) {
+		return cdRepository.findById(id).orElse(null);
+	}
 }

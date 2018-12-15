@@ -45,14 +45,16 @@
 								<div th:if="${cd != null}">
 									<div class="row">
 										<div class="col-xs-3">
-											<img class="img-responsive shelf-cd"
-												th:src="#{adminPath}+@{/image/cd/}+${cd.id}+'.png'"
-												src="" alt="" />
+											<a th:href="@{cdDetail?id=}+${cd.id}"><img class="img-responsive shelf-cd"
+												th:src="#{adminPath}+@{/image/cd/}+${cd.id}+'.png'"/></a>
 										</div>
 										<div class="col-xs-9">
-											<h4 th:text="${cd.title}"></h4>
-											<span th:text="${cd.releaseDate}"></span> <span
-												th:text="${cd.musician}"></span> <span
+											<a th:href="@{cdDetail?id=}+${cd.id}">
+												<h4 th:text="${cd.title}"></h4>
+											</a>
+											<span th:text="${cd.releaseDate}"></span> 
+											<p
+												th:text="${cd.musician}"></p> <span
 												th:text="${#strings.capitalize(cd.format)}"></span> <span
 												th:text="${cd.numberOfSongs}"><span> songs</span></span> <span
 												style="font-size: x-large; color: #db3208;">$<span
