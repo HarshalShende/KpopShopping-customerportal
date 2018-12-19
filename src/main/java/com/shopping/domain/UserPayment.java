@@ -24,7 +24,16 @@ public class UserPayment {
 	private int cvc;
 	private String holderName;
 	private boolean defaulyPayment;
+	private String cardNumber;
 	
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
