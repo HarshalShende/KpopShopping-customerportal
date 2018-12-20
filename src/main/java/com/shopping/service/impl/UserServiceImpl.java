@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shopping.domain.User;
+import com.shopping.domain.UserBilling;
+import com.shopping.domain.UserPayment;
 import com.shopping.domain.security.PasswordResetToken;
 import com.shopping.domain.security.UserRole;
 import com.shopping.repository.PasswordResetTokenRepository;
@@ -69,5 +71,15 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User save(User user) {
 		return userRepository.save(user);
+	}
+	
+	@Override
+	public void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user) {
+		userPayment.setUser(user);
+		userPayment.setUserBilling(userBilling);
+		userPayment.setDefaultPayment(true);
+		userBilling.setUserPayment(userPayment);
+		user.getUserPaymentList().add(userPayment);
+		save(user);
 	}
 }
