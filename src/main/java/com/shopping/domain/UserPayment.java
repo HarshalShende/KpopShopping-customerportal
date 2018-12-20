@@ -23,7 +23,7 @@ public class UserPayment {
 	private int expiryYear;
 	private int cvc;
 	private String holderName;
-	private boolean defaulyPayment;
+	private boolean defaultPayment;
 	private String cardNumber;
 	
 	public String getCardNumber() {
@@ -97,12 +97,12 @@ public class UserPayment {
 		this.holderName = holderName;
 	}
 
-	public boolean isDefaulyPayment() {
-		return defaulyPayment;
+	public boolean isDefaultPayment() {
+		return defaultPayment;
 	}
 
-	public void setDefaulyPayment(boolean defaulyPayment) {
-		this.defaulyPayment = defaulyPayment;
+	public void setDefaultPayment(boolean defaultPayment) {
+		this.defaultPayment = defaultPayment;
 	}
 
 	public User getUser() {
