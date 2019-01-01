@@ -18,6 +18,7 @@ import com.shopping.repository.PasswordResetTokenRepository;
 import com.shopping.repository.RoleRepository;
 import com.shopping.repository.UserPaymentRepository;
 import com.shopping.repository.UserRepository;
+import com.shopping.repository.UserShippingRepository;
 import com.shopping.service.UserService;
 
 
@@ -36,6 +37,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserPaymentRepository userPaymentRepository;
+	
+	@Autowired
+	private UserShippingRepository userShippingRepository;
 	
 	@Override
 	public PasswordResetToken getPasswordResetToken(final String token) {
@@ -110,6 +114,22 @@ public class UserServiceImpl implements UserService{
 			else {
 				userPayment.setDefaultPayment(false);
 				userPaymentRepository.save(userPayment);
+			}
+		}
+	}
+	
+	@Override
+	public 	void setUserDefaultShipping(Long userShippingId, User user) {
+		List<UserShipping> userShippingList = (List<UserShipping>) userShippingRepository.findAll();
+		
+		for (UserShipping userShipping: userShippingList) {
+			if (userShipping.getId() == userShippingId) {
+				userShipping.setUserShippingDefault(true);
+				userShippingRepository.save(userShipping);
+			}
+			else {
+				userShipping.setUserShippingDefault(false);
+				userShippingRepository.save(userShipping);
 			}
 		}
 	}
