@@ -1,5 +1,6 @@
 package com.shopping.service.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import com.shopping.domain.security.PasswordResetToken;
 import com.shopping.domain.security.UserRole;
 import com.shopping.repository.PasswordResetTokenRepository;
 import com.shopping.repository.RoleRepository;
+import com.shopping.repository.UserPaymentRepository;
 import com.shopping.repository.UserRepository;
 import com.shopping.service.UserService;
 
@@ -29,6 +31,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private PasswordResetTokenRepository passwordResetTokenRepository;
+	
+	@Autowired
+	private UserPaymentRepository userPaymentRepository;
 	
 	@Override
 	public PasswordResetToken getPasswordResetToken(final String token) {
@@ -81,5 +86,21 @@ public class UserServiceImpl implements UserService{
 		userBilling.setUserPayment(userPayment);
 		user.getUserPaymentList().add(userPayment);
 		save(user);
+	}
+	
+	@Override
+	public void setUserDefaultPayment(Long userPaymentId, User user) {
+		List<UserPayment> userPaymentList = (List<UserPayment>) userPaymentRepository.findAll();
+		
+		for (UserPayment userPayment: userPaymentList) {
+			if (userPayment.getId() == userPaymentId) {
+				userPayment.setDefaultPayment(true);
+				userPaymentRepository.save(userPayment);
+			}
+			else {
+				userPayment.setDefaultPayment(false);
+				userPaymentRepository.save(userPayment);
+			}
+		}
 	}
 }

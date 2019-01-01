@@ -22,4 +22,7 @@ public interface UserService {
 	User save(User user);
 	
 	void updateUserBilling(UserBilling userBilling, UserPayment userPayment, User user);
+	
+	void setUserDefaultPayment(Long userPaymentId, User user);
+	
 }
