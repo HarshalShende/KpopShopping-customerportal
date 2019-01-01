@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.shopping.domain.User;
 import com.shopping.domain.UserBilling;
 import com.shopping.domain.UserPayment;
+import com.shopping.domain.UserShipping;
 import com.shopping.domain.security.PasswordResetToken;
 import com.shopping.domain.security.UserRole;
 import com.shopping.repository.PasswordResetTokenRepository;
@@ -18,6 +19,7 @@ import com.shopping.repository.RoleRepository;
 import com.shopping.repository.UserPaymentRepository;
 import com.shopping.repository.UserRepository;
 import com.shopping.service.UserService;
+
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -85,6 +87,14 @@ public class UserServiceImpl implements UserService{
 		userPayment.setDefaultPayment(true);
 		userBilling.setUserPayment(userPayment);
 		user.getUserPaymentList().add(userPayment);
+		save(user);
+	}
+	
+	@Override
+	public void updateUserShipping(UserShipping userShipping, User user) {
+		userShipping.setUser(user);
+		userShipping.setUserShippingDefault(true);
+		user.getUserShippingList().add(userShipping);
 		save(user);
 	}
 	
