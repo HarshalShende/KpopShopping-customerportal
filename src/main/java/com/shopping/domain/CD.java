@@ -2,14 +2,19 @@ package com.shopping.domain;
 
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class CD {
@@ -38,6 +43,10 @@ public class CD {
 	
 	@Transient //won't store in database
 	private MultipartFile cdImage;
+	
+	@OneToMany(mappedBy = "cd")
+	@JsonIgnore
+	private List<CdToCartItem> cdToCartItemList;
 
 	public Long getId() {
 		return id;
@@ -172,6 +181,14 @@ public class CD {
 
 	public void setCdImage(MultipartFile cdImage) {
 		this.cdImage = cdImage;
+	}
+
+	public List<CdToCartItem> getCdToCartItemList() {
+		return cdToCartItemList;
+	}
+
+	public void setCdToCartItemList(List<CdToCartItem> cdToCartItemList) {
+		this.cdToCartItemList = cdToCartItemList;
 	}
 
 	

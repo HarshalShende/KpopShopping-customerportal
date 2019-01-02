@@ -1,7 +1,3 @@
-
-
-
-
 package com.shopping.domain;
 
 import javax.persistence.CascadeType;
@@ -16,7 +12,7 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-public class UserPayment {
+public class Payment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +23,6 @@ public class UserPayment {
 	private int expiryYear;
 	private int cvc;
 	private String holderName;
-	private boolean defaultPayment;
 	private String cardNumber;
 	
 	public String getCardNumber() {
@@ -38,9 +33,8 @@ public class UserPayment {
 		this.cardNumber = cardNumber;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private User user;
+	@OneToOne
+	private Order order;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "userPayment")
 	private UserBilling userBilling;
@@ -101,20 +95,12 @@ public class UserPayment {
 		this.holderName = holderName;
 	}
 
-	public boolean isDefaultPayment() {
-		return defaultPayment;
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setDefaultPayment(boolean defaultPayment) {
-		this.defaultPayment = defaultPayment;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	public UserBilling getUserBilling() {
@@ -127,4 +113,3 @@ public class UserPayment {
 	
 	
 }
-
