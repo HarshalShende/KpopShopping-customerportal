@@ -85,5 +85,13 @@ public class CartItemServiceImpl implements CartItemService{
 		if (qty>cd.getInStockNumber()) return false;
 		return true;
 	}
+	
+	public CartItem findById(Long id) {
+		return cartItemRepository.findById(id).orElse(null);
+	}
 
+	public void removeCartItem(Long id) {
+		cdToCartItemRepository.deleteByCartItem(findById(id));
+		cartItemRepository.delete(findById(id));
+	}
 }

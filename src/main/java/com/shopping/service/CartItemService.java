@@ -18,4 +18,8 @@ public interface CartItemService {
 	CartItem addCdToCartItem(CD cd, User user, int qty);
 	
 	boolean isEnoughStock(CD cd, User user, int qty);
+	
+	CartItem findById(Long id);
+	
+	void removeCartItem(Long id);
 }
