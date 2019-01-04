@@ -29,6 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	private static final String[] PUBLIC_MATCHERS = {
+			
+			//urls that are public, don't need to log in to see them
 			"/css/**",
 			"/js/**",
 			"/image/**",

@@ -15,7 +15,7 @@ public class CdToCartItem {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name="book_id")
+	@JoinColumn(name="cd_id")
 	private CD cd;
 	
 	@ManyToOne

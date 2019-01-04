@@ -43,7 +43,7 @@
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">CDs<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a th:href="@{cdShelf}" >Browse the CDs</a></li>
+								<li><a th:href="@{cdShelf1}" >Browse the CDs</a></li>
 								<li><a href="#">Store hours &#38; Directions</a></li>
 								<li><a href="#">FAQ</a></li>
 							</ul></li>
@@ -56,7 +56,7 @@
 						</form>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">SHOPPING CART </a></li>
+						<li><a th:href="@{/shoppingCart/cart}">SHOPPING CART</a></li>
 						<li><a sec:authorize="isAnonymous()" th:href="@{/login}">MY ACCOUNT </a></li>
 						<li><a sec:authorize="isAuthenticated()" th:href="@{/myProfile}">MY ACCOUNT </a></li>
 						<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOG OUT</a></li>
