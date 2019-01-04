@@ -32,6 +32,8 @@
     		</div>
     		
     		<div class="col-xs-9">
+    			<h3><span th:if="${addCdSuccess}" style="color: forestgreen"><i class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Added to cart.</span></h3>
+    			<h3><span th:if="${notEnoughStock}" style="color: red">Oops, only <span th:text="${cd.inStockNumber}"></span> In Stock.</span></h3>
     			<h3 th:text="${cd.title}">CD Title</h3>
     			<div class="row">
     				<div class="col-xs-5">
