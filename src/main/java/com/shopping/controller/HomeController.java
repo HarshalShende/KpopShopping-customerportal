@@ -219,7 +219,7 @@ public class HomeController {
 		UserShipping userShipping = new UserShipping();
 		model.addAttribute("userShipping", userShipping); 
 		
-		model.addAttribute("listOCreditCards", true);
+		model.addAttribute("listOfCreditCards", true);
 		model.addAttribute("listOfShippingAddresses", true);
 		
 		List<String> stateList = USConstants.listOfUSStatesCode;
