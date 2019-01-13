@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService{
 	private PasswordResetTokenRepository passwordResetTokenRepository;
 	
 	@Override
+	public User findById(Long id) {
+		return userRepository.findById(id).orElse(null);
+	}
+	
+	@Override
 	public PasswordResetToken getPasswordResetToken(final String token) {
 		return passwordResetTokenRepository.findByToken(token);
 	}

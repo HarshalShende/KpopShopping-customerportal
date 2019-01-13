@@ -44,6 +44,17 @@
 							<div class="panel panel-default" style="border: none;">
 								<div class="panel-body"
 									style="background-color: #ededed; margin-top: 20px;">
+									
+									<div class='alert alert-danger' th:if="${incorrectPassword}">
+										<strong>Incorrect Password!</strong>
+										Please enter the correct password for the current user.
+									</div>
+									
+									
+									<div class='alert alert-success' th:if="${updateSuccess}">
+										<strong>Update success!</strong>
+									</div>
+									
 									<form th:action="@{/updateUserInfo}" method="post">
 										<input type="hidden" name="id" th:value="${user.id}" />
 
@@ -72,8 +83,8 @@
 										</div>
 										<div class="form-group">
 											<label for="currentPassword">Current Password</label> ' <input
-												type="text" class="form-control" id="currentPassword"
-												name="currentPassword" th:value="${currentPassword}" />
+												type="password" class="form-control" id="currentPassword"
+												name="password" th:value="${currentPassword}" />
 										</div>
 										<p style="color: #828282">Enter your current password to
 											change the email address or password.</p>
@@ -90,20 +101,20 @@
 											notification.</p>
 
 										<div class="form-group">
-											<label for="txtNewPassword">Password</label> ' <input
+											<label for="txtNewPassword">Password</label> &nbsp;<span id="checkPasswordMatch" style="color:red;"></span>
+											<input
 												type="password" class="form-control" id="txtNewPassword"
 												name="newPassword" />
 										</div>
 
 										<div class="form-group">
-											<label for="txtConfirmPassword">Confirm Password</label> ' <input
+											<label for="txtConfirmPassword">Confirm Password</label> '	<input
 												type="password" class="form-control" id="txtConfirmPassword" />
 										</div>
 										<p style="color: #828282">To change the current user
 											password, enter the new password in both fields.</p>
 
-										<button type="submit" class="btn btn-primary">Create
-											new account</button>
+										<button id='updateUserInfoButton' type="submit" class="btn btn-primary">Save All</button>
 									</form>
 								</div>
 							</div>

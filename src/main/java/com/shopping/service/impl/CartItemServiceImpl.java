@@ -94,4 +94,8 @@ public class CartItemServiceImpl implements CartItemService{
 		cdToCartItemRepository.deleteByCartItem(findById(id));
 		cartItemRepository.delete(findById(id));
 	}
+	
+	public CartItem save(CartItem cartItem) {
+		return cartItemRepository.save(cartItem);
+	}
 }
