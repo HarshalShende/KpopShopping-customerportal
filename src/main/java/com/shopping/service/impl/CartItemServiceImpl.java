@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.shopping.domain.CD;
 import com.shopping.domain.CartItem;
 import com.shopping.domain.CdToCartItem;
+import com.shopping.domain.Order;
 import com.shopping.domain.ShoppingCart;
 import com.shopping.domain.User;
 import com.shopping.repository.CartItemRepository;
@@ -97,5 +98,9 @@ public class CartItemServiceImpl implements CartItemService{
 	
 	public CartItem save(CartItem cartItem) {
 		return cartItemRepository.save(cartItem);
+	}
+	
+	public List<CartItem> findByOrder(Order order) {
+		return cartItemRepository.findByOrder(order);
 	}
 }
