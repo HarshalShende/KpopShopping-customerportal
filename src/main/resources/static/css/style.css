@@ -1,6 +1,7 @@
 body {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	background-color: #f9f9f9;
 }
 
 hr {
@@ -14,6 +15,14 @@ hr {
 	margin-bottom: 20px;
 }
 
+.banner {
+	background-image: url("/image/bgline.jpeg");
+}
+
+.panel-body {
+    padding: 5px!important;
+    background-color: #fff;
+}
 
 .container{
 	width: 90%;
