@@ -22,11 +22,11 @@ public class UserRole {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userRoleId;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="role_id")
 	private Role role;
 	
