@@ -3,20 +3,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.shopping</groupId>
-	<artifactId>Shopping</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
-	<name>KpopShopping</name>
-	<description>frontend part for kpop shopping project</description>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
+	<groupId>com.shopping</groupId>
+	<artifactId>shopping</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>KpopShopping</name>
+	<description>frontend part for kpop shopping project</description>
+
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -79,8 +80,7 @@
 		<dependency>
         	<groupId>javax.xml.bind</groupId>
        	   <artifactId>jaxb-api</artifactId>
-          <version>2.3.0</version>
-       </dependency>
+          </dependency>
        
 	</dependencies>
 
