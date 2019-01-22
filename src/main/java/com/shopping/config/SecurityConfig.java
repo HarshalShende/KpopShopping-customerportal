@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			"/cdShelf",
 			"/cdDetail/**",
 			"/hours",
-			"/faq"
+			"/faq",
+			"/searchByCategory"
 	};
 
 	@Override

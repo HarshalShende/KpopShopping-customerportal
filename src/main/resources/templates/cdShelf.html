@@ -23,7 +23,18 @@
 		
 		
 		<div class="row" style="margin-top: 150px;">
-			<div class="col-xs-10 col-xs-offset-1">
+			<div class="col-xs-3">
+				<h3><label for="category">Category</label></h3>
+				<div class="list-group" id="category">
+					<a th:href="@{/cdShelf}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
+					<a th:href="@{/searchByCategory(category='Male Group')}" th:classappend="${activeMaleGroup}? 'active'" class="list-group-item">Male Group</a>
+					<a th:href="@{/searchByCategory(category='Female Group')}" th:classappend="${activeFemaleGroup}? 'active'" class="list-group-item">Female Group</a>
+					<a th:href="@{/searchByCategory(category='Male Solo')}" th:classappend="${activeMaleSolo}? 'active'" class="list-group-item">Male Solo</a>
+					<a th:href="@{/searchByCategory(category='Female Solo')}" th:classappend="${activeFemaleSolo}? 'active'" class="list-group-item">Female Solo</a>
+					
+				</div>
+			</div>
+			<div class="col-xs-9">
 
 				<div th:if="${emptyList}">
 					<h5 style="font-style: italic;">Oops, no result is found. Try

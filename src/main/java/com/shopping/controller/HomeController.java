@@ -1,6 +1,7 @@
 package com.shopping.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -280,10 +281,28 @@ public class HomeController {
 	
 	
 	@RequestMapping("/cdShelf")
-	public String cdShelf(Model model) {
-		List<CD> cdList = cdService.findAll();
-		model.addAttribute("cdList", cdList);
+	public String cdShelf(Model model, Principal principal) {
+		if (principal != null) {
+			String username = principal.getName();
+			User user = userService.findByUsername(username);
+			model.addAttribute("user", user);
+		}
 		
+		model.addAttribute("activeAll", true);
+		
+		List<CD> cdList = cdService.findAll();
+		List<CD> activeCdList = new ArrayList<>();
+		for (CD cd: cdList) {
+			if (cd.isActive()) {
+				activeCdList.add(cd);
+			}
+		}
+		if (activeCdList.isEmpty()) {
+			model.addAttribute("emptyList", true);
+			return "cdShelf";
+		}
+		
+		model.addAttribute("cdList", activeCdList);
 		return "cdShelf";
 		
 	}
