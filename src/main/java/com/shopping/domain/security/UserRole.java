@@ -1,5 +1,6 @@
 package com.shopping.domain.security;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,8 @@ import javax.persistence.Table;
 
 import com.shopping.domain.User;
 
+
+
 @Entity
 @Table(name="user_role")
 public class UserRole {
@@ -19,11 +22,11 @@ public class UserRole {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long userRoleId;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name="role_id")
 	private Role role;
 	
