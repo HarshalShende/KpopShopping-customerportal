@@ -38,6 +38,7 @@ import com.shopping.domain.UserShipping;
 import com.shopping.domain.security.PasswordResetToken;
 import com.shopping.domain.security.Role;
 import com.shopping.domain.security.UserRole;
+import com.shopping.repository.RoleRepository;
 import com.shopping.service.CDService;
 import com.shopping.service.CartItemService;
 import com.shopping.service.OrderService;
@@ -80,6 +81,9 @@ public class HomeController {
 	
 	@Autowired
 	private CartItemService cartItemService;
+	
+	@Autowired
+	private RoleRepository roleRepository;
 
 	@RequestMapping("/")
 	public String index() {
@@ -162,9 +166,7 @@ public class HomeController {
 		String encryptedPassword = SecurityUtility.passwordEncoder().encode(password);
 		user.setPassword(encryptedPassword);
 		
-		Role role = new Role();
-		role.setRoleId(1);
-		role.setName("ROLE_USER");
+		Role role = roleRepository.findByName("ROLE_USER");
 		Set<UserRole> userRoles = new HashSet<>();
 		userRoles.add(new UserRole(user, role));
 		userService.createUser(user, userRoles);

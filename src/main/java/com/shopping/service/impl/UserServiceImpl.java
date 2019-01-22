@@ -18,6 +18,7 @@ import com.shopping.domain.UserBilling;
 import com.shopping.domain.UserPayment;
 import com.shopping.domain.UserShipping;
 import com.shopping.domain.security.PasswordResetToken;
+import com.shopping.domain.security.Role;
 import com.shopping.domain.security.UserRole;
 import com.shopping.repository.PasswordResetTokenRepository;
 import com.shopping.repository.RoleRepository;
@@ -82,11 +83,13 @@ public class UserServiceImpl implements UserService{
 			LOG.info("user {} already exists. Nothing will be done.", user.getUsername());
 		} else {
 			for (UserRole ur : userRoles) {
-				roleRepository.save(ur.getRole());
+				Role savedR = roleRepository.save(ur.getRole());
+				ur.setRole(savedR);
 			}
 			
 
-			user.getUserRoles().addAll(userRoles);
+			// user.getUserRoles().addAll(userRoles);
+			user.setUserRoles(userRoles);
 		
 			ShoppingCart shoppingCart = new ShoppingCart();
 		
@@ -100,7 +103,8 @@ public class UserServiceImpl implements UserService{
 			user.setUserPaymentList(new ArrayList<UserPayment>());
 		
 			
-			localUser = userRepository.save(user);
+			/*localUser =*/ userRepository.save(user);
+			localUser = user;
 		}
 		return localUser;
 		
