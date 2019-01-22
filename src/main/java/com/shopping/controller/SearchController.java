@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -52,5 +53,27 @@ public class SearchController {
 		model.addAttribute("cdList", cdList);
 		return "cdShelf";
 		
+	}
+	
+	@RequestMapping("/searchCd")
+	public String searchCd(
+			@ModelAttribute("keyword") String keyword,
+			Principal principal, Model model
+			) {
+		if (principal != null) {
+			String username = principal.getName();
+			User user = userService.findByUsername(username);
+			model.addAttribute("user", user);
+		}
+		
+		List<CD> cdList = cdService.blurrySearch(keyword);
+		
+		if (cdList.isEmpty()) {
+			model.addAttribute("emptyList", true);
+			return "cdShelf";
+		}
+		
+		model.addAttribute("cdList", cdList);
+		return "cdShelf";
 	}
 }

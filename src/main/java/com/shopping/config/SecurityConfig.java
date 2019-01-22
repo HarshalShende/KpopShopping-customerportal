@@ -43,7 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			"/cdDetail/**",
 			"/hours",
 			"/faq",
-			"/searchByCategory"
+			"/searchByCategory",
+			"/searchCd"
 	};
 
 	@Override

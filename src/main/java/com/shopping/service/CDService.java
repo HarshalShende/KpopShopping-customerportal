@@ -10,4 +10,6 @@ public interface CDService {
 	CD findOne(Long id);
 	
 	List<CD> findByCategory(String category);
+	
+	List<CD> blurrySearch(String keyword);
 }

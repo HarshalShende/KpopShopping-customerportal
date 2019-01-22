@@ -41,4 +41,18 @@ public class CDServiceImp implements CDService{
 		
 		return activeCdList;
 	}
+	
+	@Override
+	public List<CD> blurrySearch(String keyword) {
+		List<CD> cdList = cdRepository.findByTitleContaining(keyword);
+		List<CD> activeCdList = new ArrayList<>();
+		
+		for (CD cd: cdList) {
+			if (cd.isActive()) {
+				activeCdList.add(cd);
+			}
+		}
+		
+		return activeCdList;
+	}
 }
