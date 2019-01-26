@@ -1,8 +1,10 @@
 # Kpop Global - A Ecommerce online store selling kpop CDs
 **Developed a full-stack web application using Java, Spring, Hibernate and MySQL.**
  
+
 ![screenshot1](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548480974/github/screenshot1.jpg)
 
+## Demo
 The website is deployed to Heorku:
 [https://kpop-global.herokuapp.com](https://kpop-global.herokuapp.com). You may create your own account using your email or directly log in using the following username and password.
 * Username: **ts**
@@ -13,9 +15,22 @@ You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal
 * Username: **admin**
 * Password: **admin**
 
-This is the blog I written about how I deployed these two application to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
-# Features
+This is the blog about how I deployed these two applications to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
+
+## Functionalities
+### Kpop Global:
+User Signup and Login
+
+User Profile Management
+* general information including e-mail editing and authentication
+* add/update credit card
+* add/update shipping address
+
+
+#### Admin Portal:
+* 
 
 # Technology Stack
 
 # ScreenShots
+
