@@ -59,4 +59,22 @@ This is the blog about how I deployed these two applications to Heroku: [How did
 * Product Image uploading to the cloud
 
 ## ScreenShots
+### Kpop Global
+* Browse CDs
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/cdshelf.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/cdshelf.png)
+* CD Detail
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/cddetail.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/cddetail.png)
+* Shopping Cart
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/shoppingcart.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/shoppingcart.png)
+* Check Out
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544088/github/checkout.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544088/github/checkout.png)
+* Order Comfirmation Email
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544088/github/orderemail.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544088/github/orderemail.png)
+* My Account
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/myaccount.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/myaccount.png)
+### Admin Portal
+* CD Management
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/admincd.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/admincd.png)
+* Create/Update CD
+![https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/adminupdate.png](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548544087/github/adminupdate.png)
 
