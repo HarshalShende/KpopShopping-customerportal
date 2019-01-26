@@ -17,20 +17,48 @@ You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal
 * Password: **admin**
 
 This is the blog about how I deployed these two applications to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
+
+
 ## Technology Stack
+### Back-end:
+* Spring Boot
+* Spring Security
+* Spring Data 
+* Spring Mail
+* Hibernate
+### Front-end:
+* Thymeleaf
+* Bootstrap
+* HTML
+* CSS
+* Javascript
+### Database:
+* MySQL
+### Deployment:
+* Heroku
+* Cloudinary
+* JawsDB
+
 ## Functionalities
 ### Kpop Global:
-* User Signup and Login including e-mail authentication
+* User Signup and Login
 
 * User Profile Management: general, billing and shipping information
 
+* Product Browsing and Details
 
+* Shopping Cart
 
+* Order Checkout and Order Hisotry
 
-#### Admin Portal:
-* 
+* Automatic email confirmation
 
+### Admin Portal:
+* User Login
 
+* CRUD operations for the product
+
+* Product Image uploading to the cloud
 
 ## ScreenShots
 
