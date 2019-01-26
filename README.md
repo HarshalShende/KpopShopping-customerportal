@@ -12,9 +12,7 @@ The website is deployed to Heorku:
 * Password **p** 
 
 
-You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal). It's also deployed to Heorku: [http://kpop-global-admin-portal.herokuapp.com/adminportal](http://kpop-global-admin-portal.herokuapp.com/adminportal). 
-* Username: **admin**
-* Password: **admin**
+You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal). 
 
 This is the blog about how I deployed these two applications to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
 
