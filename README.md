@@ -1,5 +1,5 @@
-# Kpop Global - A Ecommerce online store selling kpop cds.
-**Developed a full-stack Ecommerce web application using Java, Spring, Hibernate and MySQL.**
+# Kpop Global - A Ecommerce online store selling kpop CDs
+**Developed a full-stack web application using Java, Spring, Hibernate and MySQL.**
  
 ![screenshot1](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548480974/github/screenshot1.jpg)
 
@@ -13,6 +13,7 @@ You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal
 * Username: **admin**
 * Password: **admin**
 
+This is the blog I written about how I deployed these two application to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
 # Features
 
 # Technology Stack
