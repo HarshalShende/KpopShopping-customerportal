@@ -1,6 +1,5 @@
-# Kpop Global 
-**- A full-stack E-commerce online store selling kpop cds.**
- 
+# Kpop Global - A Ecommerce online store selling kpop cds.
+**Developed a full-stack Ecommerce web application using Java, Spring, Hibernate and MySQL.**
  
 ![screenshot1](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548480974/github/screenshot1.jpg)
 
@@ -14,3 +13,8 @@ You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal
 * Username: **admin**
 * Password: **admin**
 
+# Features
+
+# Technology Stack
+
+# ScreenShots
