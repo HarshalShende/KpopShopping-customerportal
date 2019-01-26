@@ -4,7 +4,6 @@
 
 ![screenshot1](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548480974/github/screenshot1.jpg)
 
-# Technology Stack
 
 ## Demo
 The website is deployed to Heorku:
@@ -18,7 +17,7 @@ You can find the Admin Portal repo [here](https://github.com/tiansss/adminportal
 * Password: **admin**
 
 This is the blog about how I deployed these two applications to Heroku: [How did I deploy my Spring Boot Web Application to Heorku](https://tiansss.github.io/2019-01-24-How-did-I-deploy-my-Spring-Boot-Web-Application-to-Heroku/)
-
+## Technology Stack
 ## Functionalities
 ### Kpop Global:
 * User Signup and Login including e-mail authentication
@@ -33,5 +32,5 @@ This is the blog about how I deployed these two applications to Heroku: [How did
 
 
 
-# ScreenShots
+## ScreenShots
 
