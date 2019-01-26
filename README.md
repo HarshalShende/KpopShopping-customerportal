@@ -4,6 +4,8 @@
 
 ![screenshot1](https://res.cloudinary.com/hwrd8gr2p/image/upload/v1548480974/github/screenshot1.jpg)
 
+# Technology Stack
+
 ## Demo
 The website is deployed to Heorku:
 [https://kpop-global.herokuapp.com](https://kpop-global.herokuapp.com). You may create your own account using your email or directly log in using the following username and password.
@@ -19,18 +21,17 @@ This is the blog about how I deployed these two applications to Heroku: [How did
 
 ## Functionalities
 ### Kpop Global:
-User Signup and Login
+* User Signup and Login including e-mail authentication
 
-User Profile Management
-* general information including e-mail editing and authentication
-* add/update credit card
-* add/update shipping address
+* User Profile Management: general, billing and shipping information
+
+
 
 
 #### Admin Portal:
 * 
 
-# Technology Stack
+
 
 # ScreenShots
 
